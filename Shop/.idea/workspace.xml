@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="259912ef-8ee3-45d5-a9e3-7c35d6d70670" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/domain/database/ShopDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/ShopUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ShopUI.java" afterDir="false" />
     </list>
+    <list id="2f412724-ab5d-45ab-b1be-382110923ed6" name="Changes by jaspe" comment="">
+      <change beforePath="$PROJECT_DIR$/src/domain/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ShopUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ShopUI.java" afterDir="false" />
+    </list>
+    <list id="da4af053-7237-4c65-9761-2f902b8558ef" name="Changes by Sander" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +28,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/ui/ShopUI.java">
+      <ranges>
+        <range start1="2" end1="3" start2="2" end2="2" changelist="259912ef-8ee3-45d5-a9e3-7c35d6d70670" />
+        <range start1="4" end1="4" start2="3" end2="5" changelist="259912ef-8ee3-45d5-a9e3-7c35d6d70670" />
+        <range start1="11" end1="11" start2="12" end2="13" changelist="259912ef-8ee3-45d5-a9e3-7c35d6d70670" />
+        <range start1="12" end1="12" start2="14" end2="20" changelist="259912ef-8ee3-45d5-a9e3-7c35d6d70670" />
+        <range start1="13" end1="13" start2="21" end2="34" changelist="259912ef-8ee3-45d5-a9e3-7c35d6d70670" />
+        <range start1="14" end1="14" start2="35" end2="80" changelist="259912ef-8ee3-45d5-a9e3-7c35d6d70670" />
+        <range start1="16" end1="16" start2="82" end2="135" changelist="2f412724-ab5d-45ab-b1be-382110923ed6" />
+      </ranges>
+    </file>
   </component>
   <component name="ProjectId" id="1yoSxaFyFlxHh4DPu6wH2PPk47B" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -37,17 +60,31 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration name="ShopApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ShopApp" />
+      <module name="Shop" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ShopApp" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -57,7 +94,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1632916698257</updated>
-      <workItem from="1632916700635" duration="3125000" />
+      <workItem from="1632916700635" duration="3254000" />
+      <workItem from="1632920909028" duration="1878000" />
     </task>
     <servers />
   </component>
@@ -74,5 +112,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
