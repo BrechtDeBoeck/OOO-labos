@@ -1,14 +1,13 @@
 package ui;
 
 import domain.Product;
-
-import java.util.HashMap;
+import domain.Shop;
 
 public class ShopUI {
-    private HashMap<String, Product> shop;
+    private Shop shop;
 
     public ShopUI(){
-        this.shop = new HashMap<>();
+        this.shop = new Shop();
     }
     public void start(){
 
