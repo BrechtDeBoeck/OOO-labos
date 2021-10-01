@@ -8,4 +8,12 @@ public class Shop {
     public Shop(){
         this.shopDB = new ShopDB();
     }
+
+    public ShopDB getDB(){
+        return this.shopDB;
+    }
+
+    /*public double getPrice(String id, int days){
+
+    }*/
 }

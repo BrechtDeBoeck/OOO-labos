@@ -48,10 +48,8 @@ public class ShopUI {
         String id = JOptionPane.showInputDialog("Enter the id:");
         int idx = -1;
         boolean found = false;
-        for(int i = 0; i < shop.productIds.size() && !found; i++)
-        {
-            if(shop.productIds.get(i).equals(id))
-            {
+        for(int i = 0; i < shop.productIds.size() && !found; i++) {
+            if(shop.productIds.get(i).equals(id)) {
                 idx = i;
                 found = true;
             }
@@ -66,7 +64,7 @@ public class ShopUI {
         String id = JOptionPane.showInputDialog("Enter the id:");
         int idx = -1;
         boolean found = false;
-        for(int i = 0; i < shop.productIds.size() && !found; i++){
+        for(int i = 0; i < shop.productIds.size() && !found; i++) {
             if(shop.productIds.get(i).equals(id)){
                 idx = i;
                 found = true;

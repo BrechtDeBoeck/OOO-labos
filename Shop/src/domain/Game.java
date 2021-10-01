@@ -1,7 +1,7 @@
 package domain;
 
 public class Game extends Product {
-    public Game(){
-        super();
+    public Game(String title){
+        super(title);
     }
 }
