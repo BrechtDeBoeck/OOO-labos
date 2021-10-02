@@ -44,7 +44,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.ShopApp">
     <configuration name="ShopApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ShopApp" />
       <module name="Shop" />
@@ -52,9 +52,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <module name="Shop" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ShopApp" />
+        <item itemvalue="Application.test" />
       </list>
     </recent_temporary>
   </component>
@@ -69,7 +88,8 @@
       <workItem from="1632916700635" duration="3254000" />
       <workItem from="1632920909028" duration="1908000" />
       <workItem from="1633098717166" duration="330000" />
-      <workItem from="1633099262581" duration="4576000" />
+      <workItem from="1633099262581" duration="4633000" />
+      <workItem from="1633177971022" duration="3031000" />
     </task>
     <servers />
   </component>

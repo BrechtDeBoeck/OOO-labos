@@ -1,5 +1,6 @@
 package ui;
 
+import domain.Product;
 import domain.Shop;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
@@ -39,16 +40,19 @@ public class ShopUI {
         String id = JOptionPane.showInputDialog("Enter the id:");
         String type = JOptionPane.showInputDialog("Enter the type (M for movie/G for game):");
 
-        shop.productTitles.add(title);
-        shop.productIds.add(id);
-        shop.productTypes.add(type);
+        shop.getDB().addProduct(title, id, type);
     }
 
     public static void showProduct(Shop shop){
         String id = JOptionPane.showInputDialog("Enter the id:");
-        int idx = -1;
-        boolean found = false;
-        for(int i = 0; i < shop.productIds.size() && !found; i++) {
+        /*int idx = -1;
+        boolean found = false;*/
+
+        Product product = shop.getDB().getProduct(id);
+        if (product != null){
+            JOptionPane.showMessageDialog(null, product.toString());
+        }
+        /*for(int i = 0; i < shop.productIds.size() && !found; i++) {
             if(shop.productIds.get(i).equals(id)) {
                 idx = i;
                 found = true;
@@ -57,12 +61,19 @@ public class ShopUI {
         if(found)
         {
             JOptionPane.showMessageDialog(null, shop.productTitles.get(idx));
-        }
+        }*/
     }
 
     public static void showPrice(Shop shop){
         String id = JOptionPane.showInputDialog("Enter the id:");
-        int idx = -1;
+
+        Product product = shop.getDB().getProduct(id);
+        if (product != null){
+            String daysString = JOptionPane.showInputDialog("Enter the number of days:");
+            int days = Integer.parseInt(daysString);
+            JOptionPane.showMessageDialog(null, "The total price would amount to $" + shop.getPrice(id, days));
+        }
+        /*int idx = -1;
         boolean found = false;
         for(int i = 0; i < shop.productIds.size() && !found; i++) {
             if(shop.productIds.get(i).equals(id)){
@@ -74,7 +85,7 @@ public class ShopUI {
             String daysString = JOptionPane.showInputDialog("Enter the number of days:");
             int days = Integer.parseInt(daysString);
             JOptionPane.showMessageDialog(null, shop.getPrice(idx,days));
-        }
+        }*/
     }
 }
 
