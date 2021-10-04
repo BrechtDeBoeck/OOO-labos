@@ -1,7 +1,6 @@
 package domain.database;
 
 import domain.*;
-
 import java.util.*;
 
 
@@ -42,15 +41,13 @@ public class ShopDB {
         }
     }
 
-    /*public ArrayList<String> getProducts() {
-        Set<HashMap.Entry<String, Product>> entries = this.products.entrySet();
-        TreeSet<HashMap.Entry<String, Product>> data = new TreeSet<>(entries, );
-
+    public ArrayList<String> getProducts() {
         ArrayList<String> result = new ArrayList<>();
         Iterator<HashMap.Entry<String, Product>> iterator = this.products.entrySet().iterator();
         while (iterator.hasNext()){
-            result.add(iterator.next().getKey() + ": " + iterator.next().getValue().toString());
+            HashMap.Entry<String, Product> entry = iterator.next();
+            result.add(entry.getKey() + ": " + entry.getValue().toString());
         }
         return result;
-    }*/
+    }
 }

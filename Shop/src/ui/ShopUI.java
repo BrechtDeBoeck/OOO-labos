@@ -2,6 +2,8 @@ package ui;
 
 import domain.Product;
 import domain.Shop;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
@@ -18,6 +20,7 @@ public class ShopUI {
         String menu = "\n1. Add product" +
                 "\n2. Show product" +
                 "\n3. Show rental price" +
+                "\n4. Show list of products" +
                 "\n\n0. Quit";
 
         Scanner myObj = new Scanner(System.in);
@@ -31,6 +34,8 @@ public class ShopUI {
                 showProduct(shop);
             } else if (choice == 3){
                 showPrice(shop);
+            } else if (choice == 4){
+                listProducts(shop);
             }
         }
     }
@@ -86,6 +91,15 @@ public class ShopUI {
             int days = Integer.parseInt(daysString);
             JOptionPane.showMessageDialog(null, shop.getPrice(idx,days));
         }*/
+    }
+
+    public static void listProducts(Shop shop){
+        ArrayList<String> list = shop.getDB().getProducts();
+        String output = "";
+        for (String item: list){
+            output += item + "\n";
+        }
+        JOptionPane.showMessageDialog(null, output);
     }
 }
 
