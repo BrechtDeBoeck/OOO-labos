@@ -38,7 +38,7 @@ public class ShopUI {
     public static void addProduct(Shop shop) {
         String title = JOptionPane.showInputDialog("Enter the title:");
         String id = JOptionPane.showInputDialog("Enter the id:");
-        String type = JOptionPane.showInputDialog("Enter the type (M for movie/G for game):");
+        String type = JOptionPane.showInputDialog("Enter the type (M for movie/G for game/CD for CD):");
 
         shop.getDB().addProduct(title, id, type);
     }

@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="259912ef-8ee3-45d5-a9e3-7c35d6d70670" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Shop.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Shop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Shop.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Movie.java" afterDir="false" />
@@ -10,7 +12,11 @@
       <change beforePath="$PROJECT_DIR$/src/domain/database/ShopDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/database/ShopDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/ShopUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ShopUI.java" afterDir="false" />
     </list>
-    <list id="2f412724-ab5d-45ab-b1be-382110923ed6" name="Changes by jaspe" comment="" />
+    <list id="2f412724-ab5d-45ab-b1be-382110923ed6" name="Changes by jaspe" comment="">
+      <change beforePath="$PROJECT_DIR$/src/domain/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/database/ShopDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/database/ShopDB.java" afterDir="false" />
+    </list>
     <list id="da4af053-7237-4c65-9761-2f902b8558ef" name="Changes by Sander" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +33,36 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/domain/Product.java">
+      <ranges>
+        <range start1="5" end1="6" start2="5" end2="6" changelist="2f412724-ab5d-45ab-b1be-382110923ed6" />
+        <range start1="9" end1="11" start2="9" end2="11" changelist="2f412724-ab5d-45ab-b1be-382110923ed6" />
+        <range start1="19" end1="19" start2="19" end2="21" changelist="259912ef-8ee3-45d5-a9e3-7c35d6d70670" />
+        <range start1="21" end1="22" start2="23" end2="24" changelist="2f412724-ab5d-45ab-b1be-382110923ed6" />
+        <range start1="29" end1="30" start2="31" end2="32" changelist="2f412724-ab5d-45ab-b1be-382110923ed6" />
+        <range start1="33" end1="34" start2="35" end2="35" changelist="2f412724-ab5d-45ab-b1be-382110923ed6" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/domain/database/ShopDB.java">
+      <ranges>
+        <range start1="2" end1="6" start2="2" end2="6" changelist="259912ef-8ee3-45d5-a9e3-7c35d6d70670" />
+        <range start1="10" end1="11" start2="10" end2="11" changelist="2f412724-ab5d-45ab-b1be-382110923ed6" />
+        <range start1="15" end1="16" start2="15" end2="16" changelist="2f412724-ab5d-45ab-b1be-382110923ed6" />
+        <range start1="19" end1="20" start2="19" end2="20" changelist="259912ef-8ee3-45d5-a9e3-7c35d6d70670" />
+        <range start1="26" end1="26" start2="26" end2="29" changelist="259912ef-8ee3-45d5-a9e3-7c35d6d70670" />
+        <range start1="27" end1="28" start2="30" end2="31" changelist="259912ef-8ee3-45d5-a9e3-7c35d6d70670" />
+        <range start1="33" end1="34" start2="36" end2="37" changelist="2f412724-ab5d-45ab-b1be-382110923ed6" />
+        <range start1="40" end1="40" start2="43" end2="55" changelist="259912ef-8ee3-45d5-a9e3-7c35d6d70670" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/domain/Movie.java">
+      <ranges>
+        <range start1="3" end1="3" start2="3" end2="4" changelist="2f412724-ab5d-45ab-b1be-382110923ed6" />
+        <range start1="6" end1="6" start2="7" end2="17" changelist="259912ef-8ee3-45d5-a9e3-7c35d6d70670" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectId" id="1yoSxaFyFlxHh4DPu6wH2PPk47B" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -34,6 +70,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -59,13 +99,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameTest.test_Game_MetGeldigeParameter_MaaktGameAan" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Shop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="domain" />
+      <option name="MAIN_CLASS_NAME" value="domain.GameTest" />
+      <option name="METHOD_NAME" value="test_Game_MetGeldigeParameter_MaaktGameAan" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -73,6 +131,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.ShopApp" />
+        <item itemvalue="JUnit.GameTest.test_Game_MetGeldigeParameter_MaaktGameAan" />
         <item itemvalue="Application.test" />
       </list>
     </recent_temporary>
@@ -89,7 +148,8 @@
       <workItem from="1632920909028" duration="1908000" />
       <workItem from="1633098717166" duration="330000" />
       <workItem from="1633099262581" duration="4633000" />
-      <workItem from="1633177971022" duration="3031000" />
+      <workItem from="1633177971022" duration="3075000" />
+      <workItem from="1633355735749" duration="8161000" />
     </task>
     <servers />
   </component>

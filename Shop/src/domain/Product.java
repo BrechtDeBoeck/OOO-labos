@@ -3,12 +3,12 @@ package domain;
 public abstract class Product {
     String title;
 
-    public Product(String title){
+    public Product(String title) {
         setTitle(title);
     }
 
-    private void setTitle(String title){
-        if (title == null || title.trim().isEmpty()){
+    private void setTitle(String title) {
+        if (title == null || title.trim().isEmpty()) {
             throw new IllegalArgumentException("Title may not be empty");
         }
         this.title = title;
@@ -18,8 +18,10 @@ public abstract class Product {
         return this.title;
     }
 
+    public abstract double getPrice(int days);
+
     @Override
-    public boolean equals(Object o){
+    public boolean equals(Object o) {
         if (o instanceof Product){
             return ((Product) o).getTitle().equals(this.getTitle());
         }
@@ -27,7 +29,7 @@ public abstract class Product {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return this.getTitle() + "  (" + this.getClass().getSimpleName() + ")";
     }
 }

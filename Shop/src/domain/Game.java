@@ -6,6 +6,11 @@ public class Game extends Product {
     }
 
     @Override
+    public double getPrice(int days){
+        return days * 3;
+    }
+
+    @Override
     public boolean equals(Object o){
         if (o instanceof Game){
             return super.equals(o);
