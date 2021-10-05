@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="259912ef-8ee3-45d5-a9e3-7c35d6d70670" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/domain/database/DBComparator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/domain/database/ShopDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/domain/database/ShopDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/ui/ShopUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/ui/ShopUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/database/ShopDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/database/ShopDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/ShopUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ShopUI.java" afterDir="false" />
     </list>
@@ -22,24 +25,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/domain/Product.java">
-      <ranges>
-        <range start1="5" end1="6" start2="5" end2="6" changelist="2f412724-ab5d-45ab-b1be-382110923ed6" />
-        <range start1="9" end1="11" start2="9" end2="11" changelist="2f412724-ab5d-45ab-b1be-382110923ed6" />
-        <range start1="19" end1="19" start2="19" end2="21" changelist="259912ef-8ee3-45d5-a9e3-7c35d6d70670" />
-        <range start1="21" end1="22" start2="23" end2="24" changelist="2f412724-ab5d-45ab-b1be-382110923ed6" />
-        <range start1="29" end1="30" start2="31" end2="32" changelist="2f412724-ab5d-45ab-b1be-382110923ed6" />
-        <range start1="33" end1="34" start2="35" end2="35" changelist="2f412724-ab5d-45ab-b1be-382110923ed6" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/domain/Movie.java">
-      <ranges>
-        <range start1="3" end1="3" start2="3" end2="4" changelist="2f412724-ab5d-45ab-b1be-382110923ed6" />
-        <range start1="6" end1="6" start2="7" end2="17" changelist="259912ef-8ee3-45d5-a9e3-7c35d6d70670" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectId" id="1yoSxaFyFlxHh4DPu6wH2PPk47B" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -77,15 +62,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -127,7 +110,8 @@
       <workItem from="1633098717166" duration="330000" />
       <workItem from="1633099262581" duration="4633000" />
       <workItem from="1633177971022" duration="3075000" />
-      <workItem from="1633355735749" duration="9633000" />
+      <workItem from="1633355735749" duration="9770000" />
+      <workItem from="1633448275287" duration="3072000" />
     </task>
     <servers />
   </component>

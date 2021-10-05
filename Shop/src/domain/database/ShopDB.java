@@ -41,13 +41,14 @@ public class ShopDB {
         }
     }
 
-    public ArrayList<String> getProducts() {
-        ArrayList<String> result = new ArrayList<>();
+    public ArrayList<HashMap.Entry<String, Product>> getProducts() {
+        ArrayList<HashMap.Entry<String, Product>> result = new ArrayList<>();
         Iterator<HashMap.Entry<String, Product>> iterator = this.products.entrySet().iterator();
         while (iterator.hasNext()){
             HashMap.Entry<String, Product> entry = iterator.next();
-            result.add(entry.getKey() + ": " + entry.getValue().toString());
+            result.add(entry);
         }
+        Collections.sort(result, new DBComparator());
         return result;
     }
 }

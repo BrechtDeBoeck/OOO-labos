@@ -4,6 +4,7 @@ import domain.Product;
 import domain.Shop;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
@@ -94,10 +95,10 @@ public class ShopUI {
     }
 
     public static void listProducts(Shop shop){
-        ArrayList<String> list = shop.getDB().getProducts();
+        ArrayList<HashMap.Entry<String, Product>> list = shop.getDB().getProducts();
         String output = "";
-        for (String item: list){
-            output += item + "\n";
+        for (HashMap.Entry<String, Product> item: list){
+            output += item.getKey() + ": " + item.getValue().toString() + "\n";
         }
         JOptionPane.showMessageDialog(null, output);
     }
