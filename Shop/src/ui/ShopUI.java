@@ -53,10 +53,11 @@ public class ShopUI {
         String id = JOptionPane.showInputDialog("Enter the id:");
         /*int idx = -1;
         boolean found = false;*/
-
-        Product product = shop.getDB().getProduct(id);
-        if (product != null){
+        try {
+            Product product = shop.getDB().getProduct(id);
             JOptionPane.showMessageDialog(null, product.toString());
+        } catch (Exception exc) {
+            JOptionPane.showMessageDialog(null, "Er is geen product gevonden");
         }
         /*for(int i = 0; i < shop.productIds.size() && !found; i++) {
             if(shop.productIds.get(i).equals(id)) {
