@@ -100,6 +100,7 @@ public class ShopUI {
         for (HashMap.Entry<String, Product> item: list){
             output += item.getKey() + ": " + item.getValue().toString() + "\n";
         }
+        if (output.isEmpty()) output += "Er zijn nog geen producten";
         JOptionPane.showMessageDialog(null, output);
     }
 }

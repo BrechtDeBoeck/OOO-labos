@@ -14,7 +14,7 @@ public abstract class Product {
         this.title = title;
     }
 
-    public String getTitle(){
+    public String getTitle() {
         return this.title;
     }
 
@@ -22,7 +22,7 @@ public abstract class Product {
 
     @Override
     public boolean equals(Object o) {
-        if (o instanceof Product){
+        if (o instanceof Product) {
             return ((Product) o).getTitle().equals(this.getTitle());
         }
         return false;
