@@ -30,4 +30,12 @@ public class EncryptingContext {
     public EncryptingMethod getMethod(){
         return this.coding;
     }
+
+    public String performEncryption(){
+        return this.coding.encrypt(this.tekst);
+    }
+
+    public String performDecryption(){
+        return this.coding.decrypt(this.tekst);
+    }
 }
