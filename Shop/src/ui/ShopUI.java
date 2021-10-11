@@ -43,10 +43,9 @@ public class ShopUI {
 
     public static void addProduct(Shop shop) {
         String title = JOptionPane.showInputDialog("Enter the title:");
-        String id = JOptionPane.showInputDialog("Enter the id:");
         String type = JOptionPane.showInputDialog("Enter the type (M for movie/G for game/CD for CD):");
 
-        shop.getDB().addProduct(title, id, type);
+        shop.getDB().addProduct(title, type);
     }
 
     public static void showProduct(Shop shop){
@@ -96,9 +95,9 @@ public class ShopUI {
     }
 
     public static void listProducts(Shop shop){
-        ArrayList<HashMap.Entry<String, Product>> list = shop.getDB().getProducts();
+        ArrayList<HashMap.Entry<Integer, Product>> list = shop.getDB().getProducts();
         String output = "";
-        for (HashMap.Entry<String, Product> item: list){
+        for (HashMap.Entry<Integer, Product> item: list){
             output += item.getKey() + ": " + item.getValue().toString() + "\n";
         }
         if (output.isEmpty()) output += "Er zijn nog geen producten";

@@ -6,10 +6,10 @@ public class EncryptingUI {
     private EncryptingContext context;
 
     public String encrypt(){
-        return this.context.getMethod().encrypt(this.context.getText());
+        return this.context.performEncryption();
     }
 
     public String decrypt(){
-        return this.context.getMethod().decrypt(this.context.getText());
+        return this.context.performDecryption();
     }
 }

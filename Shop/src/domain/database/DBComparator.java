@@ -9,9 +9,9 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DBComparator implements Comparator<HashMap.Entry<String, Product>> {
+public class DBComparator implements Comparator<HashMap.Entry<Integer, Product>> {
     @Override
-    public int compare(HashMap.Entry<String, Product> e1, Map.Entry<String, Product> e2){
+    public int compare(HashMap.Entry<Integer, Product> e1, Map.Entry<Integer, Product> e2){
         if (e1.getValue() instanceof Movie && (e2.getValue() instanceof Game || e2.getValue() instanceof CD)){
             return Integer.MIN_VALUE;
         } else if (e1.getValue() instanceof CD && (e2.getValue() instanceof Movie || e2.getValue() instanceof Game)) {

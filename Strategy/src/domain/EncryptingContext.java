@@ -32,10 +32,10 @@ public class EncryptingContext {
     }
 
     public String performEncryption(){
-        return this.coding.encrypt(this.tekst);
+        return this.getMethod().encrypt(this.getText());
     }
 
     public String performDecryption(){
-        return this.coding.decrypt(this.tekst);
+        return this.getMethod().decrypt(this.getText());
     }
 }

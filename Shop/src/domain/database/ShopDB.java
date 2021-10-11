@@ -5,14 +5,15 @@ import java.util.*;
 
 
 public class ShopDB {
-    private HashMap<String, Product> products;
+    private HashMap<Integer, Product> products;
+    private int pid = 1;
 
     public ShopDB() {
         this.products = new HashMap<>();
     }
 
-    public void addProduct(String title, String id, String type){
-        if (products.containsKey(id)) {
+    public void addProduct(String title, String type){
+        if (products.containsKey(pid)) {
             throw new IllegalArgumentException("Shop already contains a product with this ID");
         } else {
             Product product;
@@ -29,23 +30,25 @@ public class ShopDB {
                 default:
                 throw new IllegalArgumentException("Not a valid product type");
             }
-            products.put(id, product);
+            products.put(this.pid, product);
+            this.pid++;
         }
     }
 
     public Product getProduct(String id) {
-        if (products.containsKey(id)){
-            return products.get(id);
+        int pid = Integer.parseInt(id);
+        if (products.containsKey(pid)){
+            return products.get(pid);
         } else {
             throw new IllegalArgumentException("This id is currently not linked to a product");
         }
     }
 
-    public ArrayList<HashMap.Entry<String, Product>> getProducts() {
-        ArrayList<HashMap.Entry<String, Product>> result = new ArrayList<>();
-        Iterator<HashMap.Entry<String, Product>> iterator = this.products.entrySet().iterator();
+    public ArrayList<HashMap.Entry<Integer, Product>> getProducts() {
+        ArrayList<HashMap.Entry<Integer, Product>> result = new ArrayList<>();
+        Iterator<HashMap.Entry<Integer, Product>> iterator = this.products.entrySet().iterator();
         while (iterator.hasNext()){
-            HashMap.Entry<String, Product> entry = iterator.next();
+            HashMap.Entry<Integer, Product> entry = iterator.next();
             result.add(entry);
         }
         Collections.sort(result, new DBComparator());
