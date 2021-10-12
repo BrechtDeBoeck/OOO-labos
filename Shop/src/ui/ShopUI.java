@@ -4,10 +4,16 @@ import domain.Product;
 import domain.Shop;
 import domain.database.*;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
+
+import static javafx.application.Platform.exit;
 
 public class ShopUI {
     private Shop shop;
@@ -40,7 +46,10 @@ public class ShopUI {
             } else if (choice == 4){
                 listProducts(shop);
             } else if (choice == 5){
-
+                loanProduct(shop);
+            } else if (choice == 0){
+                makeTxt(shop);
+                System.exit(0);
             }
         }
     }
@@ -118,6 +127,28 @@ public class ShopUI {
         }
         if (output.isEmpty()) output += "Er zijn nog geen producten";
         JOptionPane.showMessageDialog(null, output);
+    }
+
+    public static void makeTxt(Shop shop) {
+        ArrayList<HashMap.Entry<Integer, Product>> list = shop.getDB().getProducts();
+        final String outputFilePath = "C:\\Documents/shop.txt";
+        File file = new File(outputFilePath);
+        BufferedWriter bf = null;
+
+        try {
+            bf = new BufferedWriter(new FileWriter(file));
+            for (HashMap.Entry<Integer, Product> item: list){
+                bf.write(item.getKey() + ": " + item.getValue().toString());
+                bf.newLine();
+            }
+        } catch (IOException e) {
+        }
+        finally {
+            try {
+                bf.close();
+            } catch (Exception e) {
+            }
+        }
     }
 }
 
