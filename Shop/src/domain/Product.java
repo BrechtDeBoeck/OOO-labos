@@ -2,6 +2,7 @@ package domain;
 
 public abstract class Product {
     String title;
+    Boolean uitgeleend = false;
 
     public Product(String title) {
         setTitle(title);
@@ -20,6 +21,10 @@ public abstract class Product {
 
     public abstract double getPrice(int days);
 
+    public Boolean getUitgeleend() { return  this.uitgeleend;}
+
+    public Boolean setUitgeleend() { return this.uitgeleend = true;}
+
     @Override
     public boolean equals(Object o) {
         if (o instanceof Product) {
@@ -30,6 +35,6 @@ public abstract class Product {
 
     @Override
     public String toString() {
-        return this.getTitle() + "  (" + this.getClass().getSimpleName() + ")";
+        return this.getTitle() + "  (" + this.getClass().getSimpleName() + ") uitgeleend: " + this.getUitgeleend();
     }
 }

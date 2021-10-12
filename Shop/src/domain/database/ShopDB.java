@@ -1,4 +1,5 @@
 package domain.database;
+import java.io.*;
 
 import domain.*;
 import java.util.*;
@@ -53,5 +54,19 @@ public class ShopDB {
         }
         Collections.sort(result, new DBComparator());
         return result;
+    }
+
+    public class PrintWriter { //info van een arraylist naar bestand
+        public static void main (String[] args) {
+
+            File producten = new File("shop.txt");
+            try {
+                PrintWriter writer = new PrintWriter(producten);
+                for (String s: ) {writer.println(s);}
+                writer.close();
+            }  catch (FileNotFoundException ex) {
+                throw new IllegalStateException();
+            }
+        }
     }
 }

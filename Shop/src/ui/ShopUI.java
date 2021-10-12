@@ -2,6 +2,7 @@ package ui;
 
 import domain.Product;
 import domain.Shop;
+import domain.database.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,6 +23,7 @@ public class ShopUI {
                 "\n2. Show product" +
                 "\n3. Show rental price" +
                 "\n4. Show list of products" +
+                "\n5. Loan product" +
                 "\n\n0. Quit";
 
         Scanner myObj = new Scanner(System.in);
@@ -37,6 +39,8 @@ public class ShopUI {
                 showPrice(shop);
             } else if (choice == 4){
                 listProducts(shop);
+            } else if (choice == 5){
+
             }
         }
     }
@@ -46,6 +50,18 @@ public class ShopUI {
         String type = JOptionPane.showInputDialog("Enter the type (M for movie/G for game/CD for CD):");
 
         shop.getDB().addProduct(title, type);
+    }
+
+    public static void loanProduct(Shop shop) {
+        String id = JOptionPane.showInputDialog("Enter the id:");
+
+        try {
+            Product product = shop.getDB().getProduct(id);
+            product.setUitgeleend();
+            JOptionPane.showMessageDialog(null, product.toString() + " is nu uitgeleend");
+        } catch (Exception exc) {
+            JOptionPane.showMessageDialog(null, "Er is geen product gevonden");
+        }
     }
 
     public static void showProduct(Shop shop){
