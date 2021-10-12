@@ -56,7 +56,7 @@ public class ShopDB {
         return result;
     }
 
-    public class PrintWriter { //info van een arraylist naar bestand
+    /*public class PrintWriter { //info van een arraylist naar bestand
         public static void main (String[] args) {
 
             File producten = new File("shop.txt");
@@ -68,5 +68,5 @@ public class ShopDB {
                 throw new IllegalStateException();
             }
         }
-    }
+    }*/
 }

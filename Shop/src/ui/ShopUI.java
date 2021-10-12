@@ -48,7 +48,7 @@ public class ShopUI {
             } else if (choice == 5){
                 loanProduct(shop);
             } else if (choice == 0){
-                makeTxt(shop);
+                writeTxt(shop);
                 System.exit(0);
             }
         }
@@ -129,7 +129,7 @@ public class ShopUI {
         JOptionPane.showMessageDialog(null, output);
     }
 
-    public static void makeTxt(Shop shop) {
+    public static void writeTxt(Shop shop) {
         ArrayList<HashMap.Entry<Integer, Product>> list = shop.getDB().getProducts();
         final String outputFilePath = "C:\\Documents/shop.txt";
         File file = new File(outputFilePath);
@@ -150,58 +150,20 @@ public class ShopUI {
             }
         }
     }
-}
 
-/*
-    public static void SchrijfTestNamen() {
-        System.out.println("\n\tWriting plain names");
-        File namen = new File("Namen.txt");
-        try {
-            PrintWriter writer = new PrintWriter("namen");
-            writer.println("Rudi Swennen");
-            writer.println("Elke Steegmans");
-            writer.close();
-        } catch (FileNotFoundException ex) {
-            throw new IllegalStateException("Fout bij wegschrijven " + ex);
-        }
-    }
-
-    public static void SchrijfVanArray() {
-        System.out.println("\n\tWriting from array");
-        ArrayList<String> lijst = new ArrayList<>();
-        lijst.add("Rudi Swennen");
-        lijst.add("Elke Steegmans");
-        File namen = new File("Namen.txt");
-
-        try {
-            PrintWriter writer = new PrintWriter("namen");
-            for (String s : lijst) {
-                writer.println(s);
-            }
-            writer.close();
-        } catch (FileNotFoundException ex) {
-            throw new IllegalStateException("Fout bij wegschrijven " + ex);
-        }
-    }
-
-    public static void LeesVanBestand() {
+    /*public static void readTxt() {
         System.out.println("\n\tReading from file");
         ArrayList<Persoon> personen = new ArrayList<>();
-        File personenFile = new File("Personen.txt");
+        final String inputFilePath = "C:\\Documents/shop.txt";
+        File file = new File(inputFilePath);
         try {
-            Scanner scannerFile = new Scanner(personenFile);
+            Scanner scannerFile = new Scanner(file);
             while (scannerFile.hasNextLine()) {
                 String s = scannerFile.nextLine();
-                String[] delen = s.split("/");
-                Persoon persoon = new Persoon(delen[1], delen[0]);
-                personen.add(persoon);
-            }
-            System.out.println();
-            for (Persoon p : personen) {
-                System.out.println("\tPersoon " + p.getVoornaam() + " " + p.getNaam());
+                String[] delen = s.split(" ");
             }
         } catch (IllegalStateException | FileNotFoundException ex) {
             System.out.println("Fout bij het inlezen " + ex);
         }
-    }
-*/
+    }*/
+}
