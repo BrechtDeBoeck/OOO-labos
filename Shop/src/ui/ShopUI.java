@@ -27,6 +27,7 @@ public class ShopUI {
                 "\n3. Show rental price" +
                 "\n4. Show list of products" +
                 "\n5. Loan product" +
+                "\n6. Product loaned?" +
                 "\n\n0. Quit";
 
         Scanner myObj = new Scanner(System.in);
@@ -44,6 +45,8 @@ public class ShopUI {
                 listProducts(shop);
             } else if (choice == 5){
                 loanProduct(shop);
+            }else if (choice == 6){
+                isUitgeleend(shop);
             } else if (choice == 0){
                 writeTxt(shop);
                 System.exit(0);
@@ -71,6 +74,23 @@ public class ShopUI {
             }
         } catch (Exception exc) {
             JOptionPane.showMessageDialog(null, "Er is geen product gevonden");
+        }
+    }
+    public static void isUitgeleend (Shop shop){
+        String id = JOptionPane.showInputDialog("Enter the id:");
+
+        try {
+            Product product = shop.getDB().getProduct(id);
+            if (product.getUitgeleend()){
+                JOptionPane.showMessageDialog(null,product.getTitle() + "Product met dit ID is momenteel uitgeleend");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "product met dit ID is nog niet uitgeleend");
+            }
+
+
+        } catch (Exception exc){
+            JOptionPane.showMessageDialog(null,"Geen product gevonden");
         }
     }
 
