@@ -135,7 +135,7 @@ public class ShopUI {
         try {
             bf = new BufferedWriter(new FileWriter(file));
             for (HashMap.Entry<Integer, Product> item: list){
-                bf.write(item.getKey() + ": " + item.getValue().toString());
+                bf.write(item.getKey() + "\t" + item.getValue().getTitle() + "\t" + item.getValue().getClass());
                 bf.newLine();
             }
         } catch (IOException e) {
@@ -158,7 +158,9 @@ public class ShopUI {
             Scanner scannerFile = new Scanner(file);
             while (scannerFile.hasNextLine()) {
                 String s = scannerFile.nextLine();
-                String[] delen = s.split(" ");
+                String[] delen = s.split("\t");
+                int id = Integer.parseInt(delen[0]);
+                data.addProduct(id, delen[1], delen[2]);
             }
             shop.setDB(data);
         } catch (IllegalStateException | FileNotFoundException e) {

@@ -36,6 +36,28 @@ public class ShopDB {
         }
     }
 
+    public void addProduct(int id, String title, String type){
+        if (products.containsKey(id)){
+            throw new IllegalArgumentException("Shop already contains a product with this ID");
+        } else {
+            Product product;
+            switch(type) {
+                case "Movie":
+                    product = new Movie(title);
+                    break;
+                case "Game":
+                    product = new Game(title);
+                    break;
+                case "CD":
+                    product = new CD(title);
+                    break;
+                default:
+                    throw new IllegalArgumentException("Not a valid product type");
+            }
+            products.put(id, product);
+        }
+    }
+
     public Product getProduct(String id) {
         int pid = Integer.parseInt(id);
         if (products.containsKey(pid)){
