@@ -63,8 +63,12 @@ public class ShopUI {
 
         try {
             Product product = shop.getDB().getProduct(id);
-            product.setUitgeleend();
-            JOptionPane.showMessageDialog(null, product.toString() + " is nu uitgeleend");
+            if (!product.getUitgeleend()) {
+                product.setUitgeleend();
+                JOptionPane.showMessageDialog(null, product.getTitle() + " is nu uitgeleend");
+            } else {
+                JOptionPane.showMessageDialog(null, product.getTitle() + " is al uitgeleend");
+            }
         } catch (Exception exc) {
             JOptionPane.showMessageDialog(null, "Er is geen product gevonden");
         }

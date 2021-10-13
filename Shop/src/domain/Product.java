@@ -1,5 +1,7 @@
 package domain;
 
+import domain.database.ShopDB;
+
 public abstract class Product {
     String title;
     Boolean uitgeleend = false;
@@ -14,6 +16,7 @@ public abstract class Product {
         }
         this.title = title;
     }
+
 
     public String getTitle() {
         return this.title;

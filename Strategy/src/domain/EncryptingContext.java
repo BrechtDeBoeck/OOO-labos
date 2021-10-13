@@ -4,12 +4,11 @@ public class EncryptingContext {
     private String tekst;
     private EncryptingMethod coding;
 
-    public EncryptingContext(String tekst, EncryptingMethod method){
-        setText(tekst);
-        setCoding(method);
+    public EncryptingContext(){
+
     }
 
-    private void setText(String tekst){
+    public void setText(String tekst){
         if (tekst == null || tekst.trim().isEmpty()){
             throw new IllegalArgumentException("Tekst mag niet leeg zijn");
         }
@@ -20,7 +19,7 @@ public class EncryptingContext {
         return this.tekst;
     }
 
-    private void setCoding(EncryptingMethod method){
+    public void setCoding(EncryptingMethod method){
         if (method == null){
             throw new IllegalArgumentException("U moet een encryptie uitkiezen");
         }
