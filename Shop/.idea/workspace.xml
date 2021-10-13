@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="259912ef-8ee3-45d5-a9e3-7c35d6d70670" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/ShopUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ShopUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Strategy/src/domain/EncryptingContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Strategy/src/domain/EncryptingContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Strategy/src/sample/EncryptionApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Strategy/src/sample/EncryptionApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Strategy/src/ui/EncryptingUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Strategy/src/ui/EncryptingUI.java" afterDir="false" />
-    </list>
+    <list default="true" id="259912ef-8ee3-45d5-a9e3-7c35d6d70670" name="Default Changelist" comment="" />
     <list id="2f412724-ab5d-45ab-b1be-382110923ed6" name="Changes by jaspe" comment="" />
     <list id="da4af053-7237-4c65-9761-2f902b8558ef" name="Changes by Sander" comment="" />
-    <list id="e4ed9250-4542-42e3-b1c9-b517c5f2ac08" name="Changes by super" comment="">
-      <change beforePath="$PROJECT_DIR$/src/domain/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Shop.java" afterDir="false" />
-    </list>
+    <list id="e4ed9250-4542-42e3-b1c9-b517c5f2ac08" name="Changes by super" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
