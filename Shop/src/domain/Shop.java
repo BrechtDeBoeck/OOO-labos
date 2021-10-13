@@ -25,6 +25,6 @@ public class Shop {
         if (this.shopDB.getProduct(id).getUitgeleend().equals(true)){
             return "product is uitgeleend";
         }
-        return "product is nog beschikbaar en niet uitgeleend";
+        return "product is nog beschikbaar en nog niet uitgeleend";
     }
 }
