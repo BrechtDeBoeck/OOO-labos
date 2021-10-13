@@ -4,10 +4,7 @@ import domain.Product;
 import domain.Shop;
 import domain.database.*;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -142,18 +139,19 @@ public class ShopUI {
                 bf.newLine();
             }
         } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
         }
         finally {
             try {
                 bf.close();
             } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e.getMessage());
             }
         }
     }
 
-    /*public static void readTxt() {
-        System.out.println("\n\tReading from file");
-        ArrayList<Persoon> personen = new ArrayList<>();
+    public static void readTxt(Shop shop) {
+        ShopDB data = new ShopDB();
         final String inputFilePath = "C:\\Documents/shop.txt";
         File file = new File(inputFilePath);
         try {
@@ -162,8 +160,9 @@ public class ShopUI {
                 String s = scannerFile.nextLine();
                 String[] delen = s.split(" ");
             }
-        } catch (IllegalStateException | FileNotFoundException ex) {
-            System.out.println("Fout bij het inlezen " + ex);
+            shop.setDB(data);
+        } catch (IllegalStateException | FileNotFoundException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
         }
-    }*/
+    }
 }

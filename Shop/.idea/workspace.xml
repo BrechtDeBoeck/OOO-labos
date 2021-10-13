@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="259912ef-8ee3-45d5-a9e3-7c35d6d70670" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/database/ShopDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/database/ShopDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Shop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/ShopUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ShopUI.java" afterDir="false" />
     </list>
     <list id="2f412724-ab5d-45ab-b1be-382110923ed6" name="Changes by jaspe" comment="" />
@@ -59,19 +59,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="GameTest.test_Game_MetGeldigeParameter_MaaktGameAan" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Shop" />
       <extension name="coverage">
@@ -112,7 +99,8 @@
       <workItem from="1633355735749" duration="9770000" />
       <workItem from="1633448275287" duration="3072000" />
       <workItem from="1633962928943" duration="3881000" />
-      <workItem from="1634062072416" duration="1747000" />
+      <workItem from="1634062072416" duration="2661000" />
+      <workItem from="1634106564862" duration="932000" />
     </task>
     <servers />
   </component>
