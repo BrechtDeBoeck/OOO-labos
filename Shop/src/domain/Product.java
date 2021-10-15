@@ -3,11 +3,21 @@ package domain;
 import domain.database.ShopDB;
 
 public abstract class Product {
-    String title;
-    Boolean uitgeleend = false;
+    private ProductState uitleenbaar;
+    private ProductState uitgeleend;
+    private ProductState beschadigd;
+    private ProductState verwijderd;
+
+    private String title;
+    private ProductState state;
 
     public Product(String title) {
+        uitleenbaar = new Uitleenbaar(this);
+        uitgeleend = new Uitgeleend(this);
+        beschadigd = new Beschadigd(this);
+        verwijderd = new Verwijderd(this);
         setTitle(title);
+        this.state = uitleenbaar;
     }
 
     private void setTitle(String title) {
@@ -24,9 +34,9 @@ public abstract class Product {
 
     public abstract double getPrice(int days);
 
-    public Boolean getUitgeleend() { return  this.uitgeleend;}
+    public Boolean getUitgeleend() { return  this.state == uitgeleend;}
 
-    public Boolean setUitgeleend() { return this.uitgeleend = true;}
+    public Boolean setUitgeleend() { this.state = uitgeleend;}
 
     @Override
     public boolean equals(Object o) {
