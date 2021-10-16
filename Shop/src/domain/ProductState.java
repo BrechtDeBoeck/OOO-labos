@@ -1,8 +1,8 @@
 package domain;
 
 public interface ProductState {
-    void loanProduct();
-    void removeProduct();
-    void returnProduct();
-    void repairProduct();
+    String loanProduct(int days);
+    String removeProduct();
+    String returnProduct(boolean isBeschadigd);
+    String repairProduct();
 }

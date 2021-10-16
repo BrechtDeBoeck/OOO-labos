@@ -10,12 +10,15 @@ public abstract class Product {
 
     private String title;
     private ProductState state;
+    public int days;
 
     public Product(String title) {
         uitleenbaar = new Uitleenbaar(this);
         uitgeleend = new Uitgeleend(this);
         beschadigd = new Beschadigd(this);
         verwijderd = new Verwijderd(this);
+
+
         setTitle(title);
         this.state = uitleenbaar;
     }
@@ -32,11 +35,51 @@ public abstract class Product {
         return this.title;
     }
 
-    public abstract double getPrice(int days);
+    public abstract double getPrice();
 
-    public Boolean getUitgeleend() { return  this.state == uitgeleend;}
+    public double getRepairCosts(){
+        return this.getPrice() / 3;
+    }
 
-    public Boolean setUitgeleend() { this.state = uitgeleend;}
+    public ProductState getUitleenbaar(){
+        return this.uitleenbaar;
+    }
+
+    public ProductState getUitgeleend(){
+        return this.uitgeleend;
+    }
+
+    public ProductState getVerwijderd(){
+        return this.verwijderd;
+    }
+
+    public ProductState getBeschadigd(){
+        return this.beschadigd;
+    }
+
+    public ProductState getState(){
+        return this.state;
+    }
+
+    public void setState(ProductState state){
+        this.state = state;
+    }
+
+    public String loanProduct(int days){
+        return this.state.loanProduct(days);
+    }
+
+    public String removeProduct(){
+        return this.state.removeProduct();
+    }
+
+    public String returnProduct(boolean isBeschadigd){
+        return this.state.returnProduct(isBeschadigd);
+    }
+
+    public String repairProduct(){
+        return this.state.repairProduct();
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -48,6 +91,6 @@ public abstract class Product {
 
     @Override
     public String toString() {
-        return this.getTitle() + "  (" + this.getClass().getSimpleName() + ") uitgeleend: " + this.getUitgeleend();
+        return this.getTitle() + "  (" + this.getClass().getSimpleName() + ")  " + this.getState();
     }
 }

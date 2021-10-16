@@ -18,11 +18,14 @@ public class Shop {
     }
 
     public double getPrice(String id, int days) {
-        return this.shopDB.getProduct(id).getPrice(days);
+        Product product = this.shopDB.getProduct(id);
+        product.days = days;
+        return product.getPrice();
     }
 
     private String isUitgeleend(String id){
-        if (this.shopDB.getProduct(id).getUitgeleend().equals(true)){
+        Product product = this.shopDB.getProduct(id);
+        if (product.getState() == product.getUitgeleend()){
             return "product is uitgeleend";
         }
         return "product is nog beschikbaar en nog niet uitgeleend";

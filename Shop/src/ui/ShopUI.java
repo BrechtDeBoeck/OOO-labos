@@ -23,11 +23,14 @@ public class ShopUI {
         int choice = -1;
         Shop shop = new Shop();
         String menu = "\n1. Add product" +
-                "\n2. Show product" +
-                "\n3. Show rental price" +
-                "\n4. Show list of products" +
-                "\n5. Loan product" +
-                "\n6. Product loaned?" +
+                "\n2. Remove product" +
+                "\n3. Loan product" +
+                "\n4. Product loaned?" +
+                "\n5. Return product" +
+                "\n6. Repair product" +
+                "\n7. Show product" +
+                "\n8. Show rental price" +
+                "\n9. Show list of products" +
                 "\n\n0. Quit";
 
         Scanner myObj = new Scanner(System.in);
@@ -38,15 +41,21 @@ public class ShopUI {
             if (choice == 1){
                 addProduct(shop);
             } else if (choice == 2) {
-                showProduct(shop);
+                removeProduct(shop);
             } else if (choice == 3){
-                showPrice(shop);
-            } else if (choice == 4){
-                listProducts(shop);
-            } else if (choice == 5){
                 loanProduct(shop);
-            }else if (choice == 6){
+            } else if (choice == 4){
                 isUitgeleend(shop);
+            } else if (choice == 5){
+                returnProduct(shop);
+            }else if (choice == 6) {
+                repairProduct(shop);
+            } else if (choice == 7) {
+                showProduct(shop);
+            } else if (choice == 8) {
+                showPrice(shop);
+            } else if (choice == 9){
+                listProducts(shop);
             } else if (choice == 0){
                 writeTxt(shop);
                 System.exit(0);
@@ -61,36 +70,71 @@ public class ShopUI {
         shop.getDB().addProduct(title, type);
     }
 
-    public static void loanProduct(Shop shop) {
+    public static void removeProduct(Shop shop){
         String id = JOptionPane.showInputDialog("Enter the id:");
 
         try {
             Product product = shop.getDB().getProduct(id);
-            if (!product.getUitgeleend()) {
-                product.setUitgeleend();
-                JOptionPane.showMessageDialog(null, product.getTitle() + " is nu uitgeleend");
-            } else {
-                JOptionPane.showMessageDialog(null, product.getTitle() + " is al uitgeleend");
-            }
+            JOptionPane.showMessageDialog(null, product.removeProduct());
+        } catch (Exception exc){
+            JOptionPane.showMessageDialog(null, "Er is geen product gevonden");
+        }
+    }
+
+    public static void loanProduct(Shop shop) {
+        String id = JOptionPane.showInputDialog("Enter the id:");
+        int days = Integer.parseInt(JOptionPane.showInputDialog("Enter the amount of days you wish to rent: "));
+
+        try {
+            Product product = shop.getDB().getProduct(id);
+            JOptionPane.showMessageDialog(null, product.loanProduct(days));
         } catch (Exception exc) {
             JOptionPane.showMessageDialog(null, "Er is geen product gevonden");
         }
     }
+
     public static void isUitgeleend (Shop shop){
         String id = JOptionPane.showInputDialog("Enter the id:");
 
         try {
             Product product = shop.getDB().getProduct(id);
-            if (product.getUitgeleend()){
+            if (product.getState() == product.getUitgeleend()){
                 JOptionPane.showMessageDialog(null,product.getTitle() + "Product met dit ID is momenteel uitgeleend");
             }
-            else{
+            else {
                 JOptionPane.showMessageDialog(null, "product met dit ID is nog niet uitgeleend");
             }
 
 
         } catch (Exception exc){
             JOptionPane.showMessageDialog(null,"Geen product gevonden");
+        }
+    }
+
+    public static void returnProduct(Shop shop){
+        String id = JOptionPane.showInputDialog("Enter the id: ");
+        String isBeschadigd = JOptionPane.showInputDialog("Is the product damaged? (Yes/No): ");
+
+        try {
+            Product product = shop.getDB().getProduct(id);
+            if (isBeschadigd.equals("Yes")){
+                JOptionPane.showMessageDialog(null, product.returnProduct(true));
+            } else if (isBeschadigd.equals("No")){
+                JOptionPane.showMessageDialog(null, product.returnProduct(false));
+            }
+        } catch (Exception exc){
+            JOptionPane.showMessageDialog(null, "Er is geen product gevonden");
+        }
+    }
+
+    public static void repairProduct(Shop shop){
+        String id = JOptionPane.showInputDialog("Enter the id: ");
+
+        try {
+            Product product = shop.getDB().getProduct(id);
+            JOptionPane.showMessageDialog(null, product.repairProduct());
+        } catch (Exception exc){
+            JOptionPane.showMessageDialog(null, "Er is geen product gevonden");
         }
     }
 
@@ -159,8 +203,10 @@ public class ShopUI {
         try {
             bf = new BufferedWriter(new FileWriter(file));
             for (HashMap.Entry<Integer, Product> item: list){
-                bf.write(item.getKey() + "\t" + item.getValue().getTitle() + "\t" + item.getValue().getClass());
-                bf.newLine();
+                if (item.getValue().getState() != item.getValue().getVerwijderd()) {
+                    bf.write(item.getKey() + "\t" + item.getValue().getTitle() + "\t" + item.getValue().getClass());
+                    bf.newLine();
+                }
             }
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, e.getMessage());

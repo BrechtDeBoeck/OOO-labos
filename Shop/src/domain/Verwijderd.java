@@ -8,22 +8,22 @@ public class Verwijderd implements ProductState {
     }
 
     @Override
-    public void loanProduct(){
-
+    public String loanProduct(int days){
+        return product.getTitle() + " wordt binnenkort verwijderd en kan niet meer uitgeleend worden.";
     }
 
     @Override
-    public void removeProduct(){
-
+    public String removeProduct(){
+        return product.getTitle() + " is al gemarkeerd voor verwijdering.";
     }
 
     @Override
-    public void returnProduct(){
-
+    public String returnProduct(boolean isBeschadigd){
+        return product.getTitle() + " wordt binnenkort verwijderd en kan niet meer teruggebracht worden.";
     }
 
     @Override
-    public void repairProduct(){
-
+    public String repairProduct(){
+        return product.getTitle() + " wordt binnenkort verwijderd en kan niet meer hersteld worden.";
     }
 }

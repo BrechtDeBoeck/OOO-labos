@@ -7,7 +7,7 @@ public class Movie extends Product {
     }
 
     @Override
-    public double getPrice(int days){
+    public double getPrice(){
         double price = 5;
         int daysLeft = days - 3;
         if (daysLeft > 0){
