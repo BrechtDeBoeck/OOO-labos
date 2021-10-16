@@ -1,5 +1,6 @@
-package domain;
+package tests.domain;
 
+import domain.CD;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.After;

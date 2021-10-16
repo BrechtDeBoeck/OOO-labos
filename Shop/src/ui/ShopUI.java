@@ -10,8 +10,6 @@ import java.util.HashMap;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-import static javafx.application.Platform.exit;
-
 public class ShopUI {
     private Shop shop;
 
