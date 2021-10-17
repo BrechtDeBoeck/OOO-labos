@@ -30,7 +30,6 @@ public abstract class Product {
         this.title = title;
     }
 
-
     public String getTitle() {
         return this.title;
     }

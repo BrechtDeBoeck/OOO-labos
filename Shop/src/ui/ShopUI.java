@@ -17,7 +17,7 @@ public class ShopUI {
         this.shop = new Shop();
     }
 
-    public void start(){
+    public void start() {
         int choice = -1;
         Shop shop = new Shop();
         String menu = "\n1. Add product" +
@@ -32,6 +32,8 @@ public class ShopUI {
                 "\n\n0. Quit";
 
         Scanner myObj = new Scanner(System.in);
+
+        readTxt(shop);
 
         while (choice != 0) {
             String choiceString = JOptionPane.showInputDialog(menu);
@@ -158,7 +160,7 @@ public class ShopUI {
         }*/
     }
 
-    public static void showPrice(Shop shop){
+    public static void showPrice(Shop shop) {
         String id = JOptionPane.showInputDialog("Enter the id:");
 
         Product product = shop.getDB().getProduct(id);
@@ -194,22 +196,26 @@ public class ShopUI {
 
     public static void writeTxt(Shop shop) {
         ArrayList<HashMap.Entry<Integer, Product>> list = shop.getDB().getProducts();
-        final String outputFilePath = "C:\\Documents/shop.txt";
-        File file = new File(outputFilePath);
+        File shopPath = new File("./Shop/src/data/shop.txt");
+
+        // shop.txt exists?
+        try {
+            shopPath.createNewFile();
+        } catch (Exception ignored) {}
+
         BufferedWriter bf = null;
 
         try {
-            bf = new BufferedWriter(new FileWriter(file));
+            bf = new BufferedWriter(new FileWriter(shopPath));
             for (HashMap.Entry<Integer, Product> item: list){
                 if (item.getValue().getState() != item.getValue().getVerwijderd()) {
-                    bf.write(item.getKey() + "\t" + item.getValue().getTitle() + "\t" + item.getValue().getClass());
+                    bf.write(item.getKey() + "\t" + item.getValue().getTitle() + "\t" + item.getValue().getClass().getSimpleName());
                     bf.newLine();
                 }
             }
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-        finally {
+        } finally {
             try {
                 bf.close();
             } catch (Exception e) {
@@ -220,10 +226,17 @@ public class ShopUI {
 
     public static void readTxt(Shop shop) {
         ShopDB data = new ShopDB();
-        final String inputFilePath = "C:\\Documents/shop.txt";
-        File file = new File(inputFilePath);
+        File shopPath = new File("./Shop/src/data/shop.txt");
+
+        // shop.txt exists?
         try {
-            Scanner scannerFile = new Scanner(file);
+            shopPath.createNewFile();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+
+        try {
+            Scanner scannerFile = new Scanner(shopPath);
             while (scannerFile.hasNextLine()) {
                 String s = scannerFile.nextLine();
                 String[] delen = s.split("\t");
