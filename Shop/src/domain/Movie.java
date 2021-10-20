@@ -7,16 +7,6 @@ public class Movie extends Product {
     }
 
     @Override
-    public double getPrice(){
-        double price = 5;
-        int daysLeft = days - 3;
-        if (daysLeft > 0){
-            price += (daysLeft * 2);
-        }
-        return price;
-    }
-
-    @Override
     public boolean equals(Object o){
         if (o instanceof Movie){
             return super.equals(o);

@@ -6,11 +6,6 @@ public class CD extends Product{
     }
 
     @Override
-    public double getPrice() {
-        return days * 1.5;
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (o instanceof CD) {
             return super.equals(o);

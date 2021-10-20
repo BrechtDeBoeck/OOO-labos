@@ -7,6 +7,7 @@ public abstract class Product {
     private ProductState uitgeleend;
     private ProductState beschadigd;
     private ProductState verwijderd;
+    private Pricing pricing;
 
     private String title;
     private ProductState state;
@@ -34,10 +35,12 @@ public abstract class Product {
         return this.title;
     }
 
-    public abstract double getPrice();
+    public double getPrice(int days) {
+        return pricing.getPrice(days);
+    }
 
     public double getRepairCosts(){
-        return this.getPrice() / 3;
+        return this.getPrice(this.days) / 3;
     }
 
     public ProductState getUitleenbaar(){

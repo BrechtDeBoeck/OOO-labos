@@ -20,7 +20,7 @@ public class Shop {
     public double getPrice(String id, int days) {
         Product product = this.shopDB.getProduct(id);
         product.days = days;
-        return product.getPrice();
+        return product.getPrice(days);
     }
 
     private String isUitgeleend(String id){
