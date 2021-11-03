@@ -2,15 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="259912ef-8ee3-45d5-a9e3-7c35d6d70670" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shop/domain/CD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/domain/CD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shop/domain/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/domain/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shop/domain/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/domain/Movie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shop/domain/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/domain/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shop/domain/Shop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/domain/Shop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shop/domain/database/ShopDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/domain/database/ShopDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shop/ui/ShopUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/ui/ShopUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Shop/domain/CDTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/shopProject/ShopApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/shopProject/domain/CD.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/shopProject/domain/CaesarMethod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/shopProject/domain/EncryptingContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/shopProject/domain/EncryptingMethod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/shopProject/domain/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/shopProject/domain/MirroredMethod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/shopProject/domain/Movie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/shopProject/domain/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/shopProject/domain/Shop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/shopProject/domain/database/DBComparator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/shopProject/domain/database/ShopDB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/shopProject/sample/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/shopProject/sample/EncryptionApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/shopProject/sample/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/shopProject/ui/EncryptingUI$Decrypt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/shopProject/ui/EncryptingUI$Encrypt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/shopProject/ui/EncryptingUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/shopProject/ui/ShopUI.class" beforeDir="false" />
     </list>
     <list id="2f412724-ab5d-45ab-b1be-382110923ed6" name="Changes by jaspe" comment="" />
     <list id="da4af053-7237-4c65-9761-2f902b8558ef" name="Changes by Sander" comment="" />
@@ -67,17 +84,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="GameTest.test_Game_MetGeldigeParameter_MaaktGameAan" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Shop" />
       <extension name="coverage">
@@ -125,7 +131,9 @@
       <workItem from="1634388240463" duration="5803000" />
       <workItem from="1634474554212" duration="1933000" />
       <workItem from="1634489901426" duration="750000" />
-      <workItem from="1634561779660" duration="639000" />
+      <workItem from="1634561779660" duration="876000" />
+      <workItem from="1634730332564" duration="661000" />
+      <workItem from="1634736801217" duration="647000" />
     </task>
     <servers />
   </component>
