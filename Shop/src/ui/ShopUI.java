@@ -1,5 +1,6 @@
 package ui;
 
+import domain.Data;
 import domain.Product;
 import domain.Shop;
 import domain.database.*;
@@ -12,6 +13,7 @@ import javax.swing.JOptionPane;
 
 public class ShopUI {
     private Shop shop;
+    private Data data;
 
     public ShopUI(){
         this.shop = new Shop();
@@ -33,7 +35,7 @@ public class ShopUI {
 
         Scanner myObj = new Scanner(System.in);
 
-        readTxt(shop);
+        data.setData(shop);
 
         while (choice != 0) {
             String choiceString = JOptionPane.showInputDialog(menu);
@@ -57,7 +59,7 @@ public class ShopUI {
             } else if (choice == 9){
                 listProducts(shop);
             } else if (choice == 0){
-                writeTxt(shop);
+                data.setData(shop);
                 System.exit(0);
             }
         }
@@ -194,58 +196,4 @@ public class ShopUI {
         JOptionPane.showMessageDialog(null, output);
     }
 
-    public static void writeTxt(Shop shop) {
-        ArrayList<HashMap.Entry<Integer, Product>> list = shop.getDB().getProducts();
-        File shopPath = new File("./Shop/src/data/shop.txt");
-
-        // shop.txt exists?
-        try {
-            shopPath.createNewFile();
-        } catch (Exception ignored) {}
-
-        BufferedWriter bf = null;
-
-        try {
-            bf = new BufferedWriter(new FileWriter(shopPath));
-            for (HashMap.Entry<Integer, Product> item: list){
-                if (item.getValue().getState() != item.getValue().getVerwijderd()) {
-                    bf.write(item.getKey() + "\t" + item.getValue().getTitle() + "\t" + item.getValue().getClass().getSimpleName());
-                    bf.newLine();
-                }
-            }
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        } finally {
-            try {
-                bf.close();
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e.getMessage());
-            }
-        }
-    }
-
-    public static void readTxt(Shop shop) {
-        ShopDB data = new ShopDB();
-        File shopPath = new File("./Shop/src/data/shop.txt");
-
-        // shop.txt exists?
-        try {
-            shopPath.createNewFile();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-
-        try {
-            Scanner scannerFile = new Scanner(shopPath);
-            while (scannerFile.hasNextLine()) {
-                String s = scannerFile.nextLine();
-                String[] delen = s.split("\t");
-                int id = Integer.parseInt(delen[0]);
-                data.addProduct(id, delen[1], delen[2]);
-            }
-            shop.setDB(data);
-        } catch (IllegalStateException | FileNotFoundException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-    }
 }
