@@ -3,6 +3,7 @@ package domain;
 public class CD extends Product{
     public CD(String title) {
         super(title);
+        setPricing(new CDPricing());
     }
 
     @Override
