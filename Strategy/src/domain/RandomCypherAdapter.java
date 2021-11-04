@@ -9,15 +9,23 @@ public class RandomCypherAdapter implements EncryptingMethod {
 
     @Override
     public String encrypt(String tekst) {
+        String result = "";
         char[] message = tekst.toCharArray();
-        char[] result = this.randomCypher.encypher(message);
-        return result.toString();
+        char[] encryption = this.randomCypher.encypher(message);
+        for (char character: encryption){
+            result += character;
+        }
+        return result;
     }
 
     @Override
     public String decrypt(String tekst) {
+        String result = "";
         char[] message = tekst.toCharArray();
-        char[] result = this.randomCypher.decypher(message);
-        return result.toString();
+        char[] decryption = this.randomCypher.decypher(message);
+        for (char character: decryption){
+            result += character;
+        }
+        return result;
     }
 }
