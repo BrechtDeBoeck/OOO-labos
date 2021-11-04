@@ -1,5 +1,6 @@
 package domain;
 
+
 public class CDPricing implements Pricing{
 
     public double getPrice(int days) {
