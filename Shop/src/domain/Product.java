@@ -96,6 +96,6 @@ public abstract class Product {
 
     @Override
     public String toString() {
-        return this.getTitle() + "  (" + this.getClass().getSimpleName() + ")  " + this.getState();
+        return this.getTitle() + "  (" + this.getClass().getSimpleName() + ")  " + this.getState().getClass().getSimpleName();
     }
 }

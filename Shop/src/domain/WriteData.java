@@ -12,7 +12,7 @@ public class WriteData implements Data{
     @Override
     public void setDataAction(Shop shop) {
         ArrayList<HashMap.Entry<Integer, Product>> list = shop.getDB().getProducts();
-        File shopPath = new File("./Shop/src/data/shop.txt");
+        File shopPath = new File(".\\src\\data\\shop.txt");
 
         // shop.txt exists?
         try {
