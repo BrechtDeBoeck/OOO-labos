@@ -5,5 +5,5 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public interface Data {
-    void setData(Shop shop);
+    void setDataAction(Shop shop);
 }

@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class ReadData implements Data{
     @Override
-    public void setData(Shop shop) {
+    public void setDataAction(Shop shop) {
         ShopDB data = new ShopDB();
         File shopPath = new File("./Shop/src/data/shop.txt");
 

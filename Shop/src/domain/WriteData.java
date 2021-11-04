@@ -10,7 +10,7 @@ import java.util.HashMap;
 
 public class WriteData implements Data{
     @Override
-    public void setData(Shop shop) {
+    public void setDataAction(Shop shop) {
         ArrayList<HashMap.Entry<Integer, Product>> list = shop.getDB().getProducts();
         File shopPath = new File("./Shop/src/data/shop.txt");
 
