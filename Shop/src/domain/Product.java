@@ -30,6 +30,9 @@ public abstract class Product {
         }
         this.title = title;
     }
+    public void setPricing(Pricing pricing) {
+        this.pricing = pricing;
+    }
 
     public String getTitle() {
         return this.title;

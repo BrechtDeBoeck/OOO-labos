@@ -1,11 +1,7 @@
 package ui;
 
-import domain.Data;
-import domain.Product;
-import domain.Shop;
-import domain.database.*;
+import domain.*;
 
-import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -35,7 +31,8 @@ public class ShopUI {
 
         Scanner myObj = new Scanner(System.in);
 
-        data.setData(shop);
+        setData(new ReadData());
+        data.setDataAction(shop);
 
         while (choice != 0) {
             String choiceString = JOptionPane.showInputDialog(menu);
@@ -59,7 +56,8 @@ public class ShopUI {
             } else if (choice == 9){
                 listProducts(shop);
             } else if (choice == 0){
-                data.setData(shop);
+                setData(new WriteData());
+                data.setDataAction(shop);
                 System.exit(0);
             }
         }
@@ -196,4 +194,7 @@ public class ShopUI {
         JOptionPane.showMessageDialog(null, output);
     }
 
+    public void setData(Data data) {
+        this.data = data;
+    }
 }

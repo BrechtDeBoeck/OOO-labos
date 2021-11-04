@@ -20,6 +20,13 @@ public class Shop {
     public double getPrice(String id, int days) {
         Product product = this.shopDB.getProduct(id);
         product.days = days;
+        if (product instanceof Game) {
+            product.setPricing(new GamePricing());
+        } else if (product instanceof Movie) {
+            product.setPricing(new MoviePricing());
+        } else {
+            product.setPricing(new CDPricing());
+        }
         return product.getPrice(days);
     }
 
