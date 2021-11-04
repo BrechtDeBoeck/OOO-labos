@@ -1,8 +1,6 @@
 package ui;
 
-import domain.CaesarMethod;
-import domain.EncryptingContext;
-import domain.MirroredMethod;
+import domain.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -29,7 +27,7 @@ public class EncryptingUI extends VBox {
         textField = new TextField();
 
         comboBox = new ComboBox();
-        comboBox.getItems().addAll("Caesar", "Spiegel");
+        comboBox.getItems().addAll("Caesar", "Spiegel", "Random");
 
 
         Button code = new Button("Code");
@@ -55,6 +53,8 @@ public class EncryptingUI extends VBox {
                 context.setCoding(new CaesarMethod());
             } else if (comboBox.getValue().equals("Spiegel")){
                 context.setCoding(new MirroredMethod());
+            } else if (comboBox.getValue().equals("Random")){
+                context.setCoding(new RandomCypherAdapter(new RandomCypher()));
             }
             result.setText(context.performEncryption());
         }
@@ -68,6 +68,8 @@ public class EncryptingUI extends VBox {
                 context.setCoding(new CaesarMethod());
             } else if (comboBox.getValue().equals("Spiegel")){
                 context.setCoding(new MirroredMethod());
+            } else if (comboBox.getValue().equals("Random")){
+                context.setCoding(new RandomCypherAdapter(new RandomCypher()));
             }
             result.setText(context.performDecryption());
         }
