@@ -78,17 +78,17 @@ public class ShopDB {
         return result;
     }
 
-    /*public class PrintWriter { //info van een arraylist naar bestand
-        public static void main (String[] args) {
+    public void setLatestPid() {
+        int pid = 0;
 
-            File producten = new File("shop.txt");
-            try {
-                PrintWriter writer = new PrintWriter(producten);
-                for (String s: ) {writer.println(s);}
-                writer.close();
-            }  catch (FileNotFoundException ex) {
-                throw new IllegalStateException();
+        if (!this.products.isEmpty()){
+            for (HashMap.Entry<Integer, Product> entry: getProducts()){
+                if (pid < entry.getKey()){
+                    pid = entry.getKey();
+                }
             }
         }
-    }*/
+
+        this.pid = pid + 1;
+    }
 }

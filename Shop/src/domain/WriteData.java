@@ -25,7 +25,7 @@ public class WriteData implements Data{
             bf = new BufferedWriter(new FileWriter(shopPath));
             for (HashMap.Entry<Integer, Product> item: list){
                 if (item.getValue().getState() != item.getValue().getVerwijderd()) {
-                    bf.write(item.getKey() + "\t" + item.getValue().getTitle() + "\t" + item.getValue().getClass().getSimpleName());
+                    bf.write(item.getKey() + "\t" + item.getValue().getTitle() + "\t" + item.getValue().getClass().getSimpleName() + "\t" + item.getValue().getState().getClass().getSimpleName());
                     bf.newLine();
                 }
             }

@@ -1,2 +1,2 @@
-2	Pulp Fiction	Movie
-1	Rimworld	Game
+2	Pulp Fiction	Movie	Uitleenbaar
+1	Rimworld	Game	Uitleenbaar

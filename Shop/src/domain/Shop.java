@@ -2,6 +2,9 @@ package domain;
 
 import domain.database.*;
 
+import java.util.List;
+import java.util.Map;
+
 public class Shop {
     private ShopDB shopDB;
 
@@ -15,18 +18,12 @@ public class Shop {
 
     public void setDB(ShopDB shopDB){
         this.shopDB = shopDB;
+        this.shopDB.setLatestPid();
     }
 
     public double getPrice(String id, int days) {
         Product product = this.shopDB.getProduct(id);
         product.days = days;
-        if (product instanceof Game) {
-            product.setPricing(new GamePricing());
-        } else if (product instanceof Movie) {
-            product.setPricing(new MoviePricing());
-        } else {
-            product.setPricing(new CDPricing());
-        }
         return product.getPrice(days);
     }
 

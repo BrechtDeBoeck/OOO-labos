@@ -27,8 +27,18 @@ public class ReadData implements Data{
             while (scannerFile.hasNextLine()) {
                 String s = scannerFile.nextLine();
                 String[] delen = s.split("\t");
-                int id = Integer.parseInt(delen[0]);
-                data.addProduct(id, delen[1], delen[2]);
+                String id = delen[0];
+                data.addProduct(Integer.parseInt(id), delen[1], delen[2]);
+                switch (delen[3]){
+                    case "Uitgeleend":
+                        data.getProduct(id).setState(data.getProduct(id).getUitgeleend());
+                        break;
+                    case "Beschadigd":
+                        data.getProduct(id).setState(data.getProduct(id).getBeschadigd());
+                        break;
+                    default:
+                        data.getProduct(id).setState(data.getProduct(id).getUitleenbaar());
+                }
             }
             shop.setDB(data);
         } catch (IllegalStateException | FileNotFoundException e) {
