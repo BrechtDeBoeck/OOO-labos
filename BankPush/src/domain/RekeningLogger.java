@@ -13,9 +13,9 @@ public class RekeningLogger implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
+        Rekening rekening = (Rekening) arg;
         if (o instanceof Bank){
             Bank bank = (Bank) o;
-            Rekening rekening = bank.getNewestRekening().getValue();
             System.out.println("Rekening toegevoegd: " + rekening.getNr() + "  -  Totaal aantal rekeningen: " + bank.getAantalRekeningen());
         }
     }

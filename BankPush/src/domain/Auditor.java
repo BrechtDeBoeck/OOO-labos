@@ -14,9 +14,9 @@ public class Auditor implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
+        Rekening rekening = (Rekening) arg;
         if (o instanceof Bank){
             Bank bank = (Bank) o;
-            Rekening rekening = bank.getNewestRekening().getValue();
             System.out.println("Nieuwe rekening geopend op datum " + LocalDate.now() + " met nummer " + rekening.getNr() + " en saldo " + rekening.getSaldo());
         }
     }

@@ -40,6 +40,6 @@ public class Bank extends Observable {
 
     public void rekeningAdded(){
         setChanged();
-        notifyObservers();
+        notifyObservers(getNewestRekening());
     }
 }
