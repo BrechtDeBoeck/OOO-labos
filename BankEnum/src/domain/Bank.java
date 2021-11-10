@@ -3,16 +3,15 @@ package domain;
 import java.util.*;
 
 public class Bank implements Subject {
-    private List<Observer> openObservers;
-    private List<Observer> depositObservers;
-    private List<Observer> withdrawalObservers;
+    private HashMap<Event, List<Observer>> observers;
     private LinkedHashMap<Integer, Rekening> rekeningen;
     private Event event;
 
     public Bank(){
-        this.openObservers = new ArrayList<>();
-        this.depositObservers = new ArrayList<>();
-        this.withdrawalObservers = new ArrayList<>();
+        this.observers = new HashMap<>();
+        observers.put(Event.OPEN, new ArrayList<>());
+        observers.put(Event.DEPOSIT, new ArrayList<>());
+        observers.put(Event.WITHDRAWAL, new ArrayList<>());
         this.rekeningen = new LinkedHashMap<>();
     }
 
@@ -73,48 +72,29 @@ public class Bank implements Subject {
     @Override
     public void attach(Observer o, Event event) {
         switch(event){
-            case OPEN:
-                openObservers.add(o);
-                break;
-            case DEPOSIT:
-                depositObservers.add(o);
-                break;
-            case WITHDRAWAL:
-                withdrawalObservers.add(o);
-                break;
             case ALL:
-                openObservers.add(o);
-                depositObservers.add(o);
-                withdrawalObservers.add(o);
+                for (Event e: Event.values()){
+                    if (e != Event.ALL){
+                        observers.get(e).add(o);
+                    }
+                }
                 break;
+            default:
+                observers.get(event).add(o);
         }
     }
 
     @Override
     public void detach(Observer o) {
-        openObservers.remove(o);
-        depositObservers.remove(o);
-        withdrawalObservers.remove(o);
+        for (Event e: Event.values()){
+            observers.get(e).remove(o);
+        }
     }
 
     @Override
     public void notifyObservers() {
-        switch(event){
-            case OPEN:
-                for (Observer o: openObservers){
-                    o.update(getNewestRekening().getValue(), event);
-                }
-                break;
-            case DEPOSIT:
-                for (Observer o: depositObservers){
-                    o.update(getNewestRekening().getValue(), event);
-                }
-                break;
-            case WITHDRAWAL:
-                for (Observer o: withdrawalObservers){
-                    o.update(getNewestRekening().getValue(), event);
-                }
-                break;
+        for (Observer o: observers.get(event)){
+            o.update(getNewestRekening().getValue(), event);
         }
     }
 }
