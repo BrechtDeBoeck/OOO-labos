@@ -1,22 +1,17 @@
 package domain;
 
 public enum Characters {
-    REGULAR("normal letters","abcdefghijklmnopqrstuvwxyz"),
-    CAESAR("ceasar letters","xyzabcdefghijklmnopqrstuvw");
+    CAESAR("Caesar"),
+    SPIEGEL("Spiegel"),
+    RANDOM("Random");
 
     private final String omschrijving;
-    private final String regChars;
 
-    Characters(String omschrijving, String regChars) {
+    Characters(String omschrijving) {
         this.omschrijving = omschrijving;
-        this.regChars = regChars;
     }
 
     public String getOmschrijving() {
         return omschrijving;
-    }
-
-    public String getRegChars() {
-        return regChars;
     }
 }

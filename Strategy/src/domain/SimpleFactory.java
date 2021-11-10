@@ -8,9 +8,10 @@ public class SimpleFactory {
 
         if (type.equals(Characters.CAESAR)) {
             encryptingMethod = new CaesarMethod();
-        } else if (type.equals(Characters.REGULAR)) {
+        } else if (type.equals(Characters.SPIEGEL)) {
             encryptingMethod = new MirroredMethod();
-
+        } else if (type.equals(Characters.RANDOM)) {
+            encryptingMethod = new RandomCypherAdapter(new RandomCypher());
         }
         return encryptingMethod;
     }
