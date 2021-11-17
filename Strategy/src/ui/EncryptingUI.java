@@ -13,14 +13,16 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.util.Locale;
+
 public class EncryptingUI extends VBox {
-    private EncryptingContext context;
+    private EncryptionFacade encryptionFacade;
     private TextField textField;
     private ComboBox comboBox;
     private Text result;
 
     public EncryptingUI(Stage primaryStage){
-        context = new EncryptingContext();
+        encryptionFacade = new EncryptionFacade();
         Label text = new Label("Typ text");
         Label algo = new Label("Kies algo");
 
@@ -51,30 +53,18 @@ public class EncryptingUI extends VBox {
     class Encrypt implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
-            context.setText(textField.getText());
-            if (comboBox.getValue().equals("Caesar")){
-                context.setCoding(new CaesarMethod());
-            } else if (comboBox.getValue().equals("Spiegel")){
-                context.setCoding(new MirroredMethod());
-            } else if (comboBox.getValue().equals("Random")){
-                context.setCoding(new RandomCypherAdapter(new RandomCypher()));
-            }
-            result.setText(context.performEncryption());
+            String text = textField.getText();
+            String method = ((String) comboBox.getValue()).toUpperCase();
+            result.setText(encryptionFacade.encrypt(text, method));
         }
     }
 
     class Decrypt implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event){
-            context.setText(textField.getText());
-            if (comboBox.getValue().equals("Caesar")){
-                context.setCoding(new CaesarMethod());
-            } else if (comboBox.getValue().equals("Spiegel")){
-                context.setCoding(new MirroredMethod());
-            } else if (comboBox.getValue().equals("Random")){
-                context.setCoding(new RandomCypherAdapter(new RandomCypher()));
-            }
-            result.setText(context.performDecryption());
+            String text = textField.getText();
+            String method = ((String) comboBox.getValue()).toUpperCase();
+            result.setText(encryptionFacade.decrypt(text, method));
         }
     }
 }

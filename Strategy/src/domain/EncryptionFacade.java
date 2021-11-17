@@ -2,7 +2,7 @@ package domain;
 
 public class EncryptionFacade {
     private static EncryptingContext context;
-    private static SimpleFactory factory;
+    private static SimpleFactory factory = new SimpleFactory();
 
     public String encrypt(String text, String method) {
         Characters md = Characters.valueOf(method);
