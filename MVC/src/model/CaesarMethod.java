@@ -1,4 +1,4 @@
-package domain;
+package model;
 
 public class CaesarMethod implements EncryptingMethod {
     public static final String REGULAR = "abcdefghijklmnopqrstuvwxyz";

@@ -1,4 +1,4 @@
-package domain;
+package model;
 
 public class RandomCypherAdapter implements EncryptingMethod {
     RandomCypher randomCypher;

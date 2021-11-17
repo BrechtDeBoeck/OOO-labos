@@ -1,4 +1,4 @@
-package domain;
+package model;
 
 public interface EncryptingMethod {
     String encrypt(String tekst);

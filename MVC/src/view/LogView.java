@@ -1,4 +1,7 @@
 package view;
 
-public class LogView {
+import javafx.scene.layout.VBox;
+
+public class LogView extends VBox {
+
 }
