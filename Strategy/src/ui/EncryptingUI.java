@@ -25,8 +25,7 @@ public class EncryptingUI extends VBox {
         Label algo = new Label("Kies algo");
 
         EncryptionFacade facade = new EncryptionFacade();
-        facade.addAlgorithm(new CaesarMethod());
-        // TODO : complete
+        // TODO: Complete (?)
 
         textField = new TextField();
 
