@@ -10,7 +10,7 @@ public class RandomCypherAdapter implements EncryptingMethod {
     @Override
     public String encrypt(String tekst) {
         String result = "";
-        char[] message = tekst.toCharArray();
+        char[] message = tekst.toLowerCase().toCharArray();
         char[] encryption = this.randomCypher.encypher(message);
         for (char character: encryption){
             result += character;
@@ -21,7 +21,7 @@ public class RandomCypherAdapter implements EncryptingMethod {
     @Override
     public String decrypt(String tekst) {
         String result = "";
-        char[] message = tekst.toCharArray();
+        char[] message = tekst.toLowerCase().toCharArray();
         char[] decryption = this.randomCypher.decypher(message);
         for (char character: decryption){
             result += character;
