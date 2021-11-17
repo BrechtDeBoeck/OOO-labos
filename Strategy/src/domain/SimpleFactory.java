@@ -1,8 +1,6 @@
 package domain;
 
 public class SimpleFactory {
-
-
     public EncryptingMethod createEncription(Enum type) {
         EncryptingMethod encryptingMethod = null;
 

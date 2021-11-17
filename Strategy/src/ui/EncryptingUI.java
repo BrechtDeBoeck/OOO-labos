@@ -24,6 +24,10 @@ public class EncryptingUI extends VBox {
         Label text = new Label("Typ text");
         Label algo = new Label("Kies algo");
 
+        EncryptionFacade facade = new EncryptionFacade();
+        facade.addAlgorithm(new CaesarMethod());
+        // TODO : complete
+
         textField = new TextField();
 
         comboBox = new ComboBox();
