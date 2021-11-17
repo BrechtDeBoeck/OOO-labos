@@ -3,7 +3,7 @@ package domain;
 import java.lang.reflect.Constructor;
 
 public class SimpleFactory {
-    public EncryptingContext createContext(String tekst,Characters type) throws ClassNotFoundException {
+    public EncryptingContext createContext(String tekst,Characters type) {
         EncryptingContext encryptingContext = new EncryptingContext();
         EncryptingMethod encryptingMethod = null;
 
