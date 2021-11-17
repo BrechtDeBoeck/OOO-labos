@@ -1,25 +1,18 @@
 package domain;
 
 public class EncryptionFacade {
-    private static EncryptionFacade instance;
-    private static EncryptingMethod method;
     private static EncryptingContext context;
+    private static SimpleFactory factory;
 
-    public static EncryptionFacade getInstance() {
-        if (instance == null) {
-            instance = new EncryptionFacade();
-        }
-        return instance;
+    public String encrypt(String text, String method) {
+        Characters md = Characters.valueOf(method);
+        EncryptingContext em = factory.createContext(text, md);
+        return em.performEncryption();
     }
 
-    public String encrypt(String text) {
-        return method.encrypt(text);
-    }
-
-    public String decrypt(String text) {
-        return method.decrypt(text);
-    }
-
-    public void addAlgorithm(EncryptingMethod method) {
+    public String decrypt(String text, String method) {
+        Characters md = Characters.valueOf(method);
+        EncryptingContext em = factory.createContext(text, md);
+        return em.performDecryption();
     }
 }
