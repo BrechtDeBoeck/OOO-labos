@@ -3,8 +3,11 @@ package model;
 public class SimpleFactory {
 
 
-    public EncryptingMethod createEncription(Enum type) {
+    public EncryptingContext createContext(String tekst, Characters type) {
+        EncryptingContext encryptingContext = new EncryptingContext();
         EncryptingMethod encryptingMethod = null;
+
+
 
         if (type.equals(Characters.CAESAR)) {
             encryptingMethod = new CaesarMethod();
@@ -13,6 +16,8 @@ public class SimpleFactory {
         } else if (type.equals(Characters.RANDOM)) {
             encryptingMethod = new RandomCypherAdapter(new RandomCypher());
         }
-        return encryptingMethod;
+        encryptingContext.setText(tekst);
+        encryptingContext.setCoding(encryptingMethod);
+        return encryptingContext;
     }
 }
