@@ -13,9 +13,9 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         EncryptingFacade model = new EncryptingFacade();
-        EncryptingView eView = new EncryptingView();
         EncryptingController eController = new EncryptingController();
-        LogView lView = new LogView();
-        LogController lController = new LogController();
+        EncryptingView eView = new EncryptingView(eController);
+        LogController lController = new LogController(model);
+        LogView lView = new LogView(lController);
     }
 }

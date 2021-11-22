@@ -42,8 +42,6 @@ public class EncryptingUI extends VBox {
 
         result = new Text();
 
-
-
         VBox root = new VBox(text, textField, algo, comboBox, code, decode, result);
         Scene mainScene = new Scene(root, 250, 250);
         primaryStage.setTitle("Encryption");
