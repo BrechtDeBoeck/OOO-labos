@@ -1,7 +1,7 @@
 package view;
 
 import controller.EncryptingController;
-import domain.*;
+import model.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -24,7 +24,7 @@ public class EncryptingView extends VBox {
         Label text = new Label("Typ text");
         Label algo = new Label("Kies algo");
 
-        EncryptionFacade facade = new EncryptionFacade();
+        EncryptingFacade facade = new EncryptingFacade();
         // TODO: Complete (?)
 
         textField = new TextField();

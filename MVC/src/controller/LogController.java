@@ -18,7 +18,9 @@ public class LogController implements Observer {
     }
 
     @Override
-    public void update(EncryptingContext context){
-
+    public void update(EncryptingContext context, String codedText){
+        String originalText = context.getText();
+        String codingMethod = context.getMethod().getClass().getSimpleName();
+        view.updateDisplay(originalText, codedText, codingMethod);
     }
 }

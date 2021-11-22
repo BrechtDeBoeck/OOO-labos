@@ -7,16 +7,18 @@ public class EncryptingFacade implements Subject {
     private static SimpleFactory factory = new SimpleFactory();
     private ArrayList<Observer> observers = new ArrayList<>();
 
-    public String encrypt(String text, String method) {
+    public void encrypt(String text, String method) {
         Characters md = Characters.valueOf(method);
         EncryptingContext em = factory.createContext(text, md);
-        return em.performEncryption();
+        String encrypted = em.performEncryption();
+        notifyObservers(encrypted);
     }
 
-    public String decrypt(String text, String method) {
+    public void decrypt(String text, String method) {
         Characters md = Characters.valueOf(method);
         EncryptingContext em = factory.createContext(text, md);
-        return em.performDecryption();
+        String decrypted = em.performDecryption();
+        notifyObservers(decrypted);
     }
 
     @Override
@@ -30,9 +32,9 @@ public class EncryptingFacade implements Subject {
     }
 
     @Override
-    public void notifyObservers(){
+    public void notifyObservers(String codedText){
         for (Observer obs: observers){
-            obs.update(this.context);
+            obs.update(this.context, codedText);
         }
     }
 }
